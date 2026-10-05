@@ -42,6 +42,9 @@ public class ThirdPersonCamera : MonoBehaviour
 
     void LateUpdate()
     {
+
+        // Do not follow mouse while the pause menu is opened:
+        if (Time.timeScale == 0f) return;
         if (target == null) return;
 
         // 1. Gather mouse input
